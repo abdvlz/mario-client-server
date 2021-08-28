@@ -30,3 +30,4 @@ The approach on how to serve the video on a webpage is taken from [this blog](ht
 
 ## License
 Code and documentation released under the [MIT License](https://github.com/rena2damas/remote-opencv-streaming-live-video/blob/master/LICENSE)
+# mario-client-server

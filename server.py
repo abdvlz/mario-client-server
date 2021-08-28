@@ -1,5 +1,5 @@
 from flask import Flask, render_template, Response
-from streamer import Streamer
+from streamer_local import Streamer
 
 app = Flask(__name__)
 

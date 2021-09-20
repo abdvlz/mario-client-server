@@ -1,4 +1,10 @@
-Flask==1.1.2
-numpy==1.18.3
-opencv-python==4.2.0.34
-
+Flask
+numpy
+opencv-python
+numpy
+tensorflow
+nes-py
+gym
+gym_super_mario_bros
+gym_chrome_dino
+pygame

@@ -1,14 +1,17 @@
 from flask import Flask, render_template, Response
-from streamer_local import Streamer
+from streamer import Streamer
 
 app = Flask(__name__)
 
 def gen():
-  streamer = Streamer('localhost', 8080)
+  streamer = Streamer('0.0.0.0', 8080)
   streamer.start()
 
   while True:
     if streamer.streaming:
+      if streamer.gesture != "":
+        print(streamer.get_gesture())
+
       yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + streamer.get_jpeg() + b'\r\n\r\n')
 
 @app.route('/')
@@ -20,4 +23,4 @@ def video_feed():
   return Response(gen(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-  app.run(host='localhost', threaded=True)
+  app.run(host='0.0.0.0', threaded=True, debug=True)
